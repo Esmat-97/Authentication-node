@@ -1,0 +1,24 @@
+
+    <form #main="ngForm" (ngSubmit)="handleSubmit(main)">
+
+        <input type="text" name="username"  placeholder="username"  required  #username="ngModel"  ngModel>
+        @if(username.invalid && username.touched){
+        @if(username.errors?.['required']){
+          <span> the username is required </span>
+            }
+        }
+        
+        <br>
+        
+        <input type="password" name="password"  placeholder="password"  required  #password="ngModel"  ngModel>
+        @if(password.invalid && password.touched){
+        @if(password.errors?.['required']){
+          <span>  the password is required   </span>
+            }
+        }
+            
+        
+        <input type="submit" value="submit" >
+    
+    </form>
+      
